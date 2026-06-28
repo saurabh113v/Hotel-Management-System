@@ -34,7 +34,7 @@ function RoomDetails({ onNavigate, roomId, setRoomsFilter, currentUser, triggerL
     }
     setLoading(true);
     try {
-      const res = await axios.get(`http://localhost:5000/api/rooms/${roomId}`);
+      const res = await axios.get(`/api/rooms/${roomId}`);
       if (res.data.success) {
         setRoom(res.data.data);
         setActiveImage(res.data.data.image);
@@ -61,7 +61,7 @@ function RoomDetails({ onNavigate, roomId, setRoomsFilter, currentUser, triggerL
       }
       try {
         const token = localStorage.getItem('token');
-        const res = await axios.get('http://localhost:5000/api/bookings/my', {
+        const res = await axios.get('/api/bookings/my', {
           headers: { Authorization: `Bearer ${token}` }
         });
         if (res.data.success) {
@@ -92,7 +92,7 @@ function RoomDetails({ onNavigate, roomId, setRoomsFilter, currentUser, triggerL
 
     try {
       const token = localStorage.getItem('token');
-      const res = await axios.post(`http://localhost:5000/api/rooms/${roomId}/reviews`, {
+      const res = await axios.post(`/api/rooms/${roomId}/reviews`, {
         rating: reviewRating,
         comment: reviewComment
       }, {
@@ -149,7 +149,7 @@ function RoomDetails({ onNavigate, roomId, setRoomsFilter, currentUser, triggerL
     setBookingLoading(true);
     try {
       const token = localStorage.getItem('token');
-      const res = await axios.post('http://localhost:5000/api/bookings', {
+      const res = await axios.post('/api/bookings', {
         roomId,
         checkIn,
         checkOut,

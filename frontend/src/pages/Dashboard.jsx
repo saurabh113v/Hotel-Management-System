@@ -14,7 +14,7 @@ function Dashboard({ onNavigate, currentUser }) {
     setLoading(true);
     try {
       const token = localStorage.getItem('token');
-      const res = await axios.get('http://localhost:5000/api/bookings/my', {
+      const res = await axios.get('/api/bookings/my', {
         headers: { Authorization: `Bearer ${token}` }
       });
       if (res.data.success) {
@@ -40,7 +40,7 @@ function Dashboard({ onNavigate, currentUser }) {
     setCancelLoadingId(bookingId);
     try {
       const token = localStorage.getItem('token');
-      const res = await axios.post(`http://localhost:5000/api/bookings/${bookingId}/cancel`, {}, {
+      const res = await axios.post(`/api/bookings/${bookingId}/cancel`, {}, {
         headers: { Authorization: `Bearer ${token}` }
       });
       if (res.data.success) {

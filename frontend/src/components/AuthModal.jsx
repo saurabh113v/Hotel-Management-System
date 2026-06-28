@@ -18,8 +18,8 @@ function AuthModal({ isOpen, onClose, mode, setMode, onAuthSuccess }) {
 
     try {
       const url = mode === 'login' 
-        ? 'http://localhost:5000/api/auth/login' 
-        : 'http://localhost:5000/api/auth/register';
+        ? '/api/auth/login' 
+        : '/api/auth/register';
 
       const payload = mode === 'login' 
         ? { email, password } 

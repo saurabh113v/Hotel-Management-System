@@ -37,8 +37,12 @@ app.get('/', (req, res) => {
   res.send('Welcome to the Hotel Room Booking System Server API');
 });
 
-// Start listening
-const PORT = process.env.PORT || 5000;
-app.listen(PORT, () => {
-  console.log(`Server successfully started on port ${PORT} in ${process.env.NODE_ENV || 'development'} mode.`);
-});
+// Start listening (only if not on Vercel production)
+if (process.env.NODE_ENV !== 'production' || !process.env.VERCEL) {
+  const PORT = process.env.PORT || 5000;
+  app.listen(PORT, () => {
+    console.log(`Server successfully started on port ${PORT} in ${process.env.NODE_ENV || 'development'} mode.`);
+  });
+}
+
+module.exports = app;

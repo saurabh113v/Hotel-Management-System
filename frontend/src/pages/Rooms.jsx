@@ -32,7 +32,7 @@ function Rooms({ onNavigate, roomsFilter, setRoomsFilter }) {
       if (checkOut) params.checkOut = checkOut;
       if (location && location !== 'all') params.location = location;
 
-      const res = await axios.get('http://localhost:5000/api/rooms', { params });
+      const res = await axios.get('/api/rooms', { params });
       if (res.data.success) {
         setRooms(res.data.data);
       } else {

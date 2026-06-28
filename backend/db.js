@@ -140,6 +140,10 @@ const seedData = async () => {
 };
 
 const connectDB = async () => {
+  if (mongoose.connection.readyState >= 1) {
+    console.log('Using existing MongoDB connection');
+    return;
+  }
   const connString = process.env.MONGO_URI || 'mongodb://localhost:27017/hotel-booking';
   mongoose.set('strictQuery', false);
 

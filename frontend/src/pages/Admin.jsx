@@ -33,8 +33,8 @@ function Admin({ currentUser, onNavigate }) {
       const token = localStorage.getItem('token');
       
       const [roomsRes, bookingsRes] = await Promise.all([
-        axios.get('http://localhost:5000/api/rooms'),
-        axios.get('http://localhost:5000/api/bookings', {
+        axios.get('/api/rooms'),
+        axios.get('/api/bookings', {
           headers: { Authorization: `Bearer ${token}` }
         })
       ]);
@@ -60,7 +60,7 @@ function Admin({ currentUser, onNavigate }) {
     if (!window.confirm('Are you sure you want to cancel this booking?')) return;
     try {
       const token = localStorage.getItem('token');
-      const res = await axios.post(`http://localhost:5000/api/bookings/${bookingId}/cancel`, {}, {
+      const res = await axios.post(`/api/bookings/${bookingId}/cancel`, {}, {
         headers: { Authorization: `Bearer ${token}` }
       });
       if (res.data.success) {
@@ -75,7 +75,7 @@ function Admin({ currentUser, onNavigate }) {
     if (!window.confirm('Are you sure you want to permanently delete this room?')) return;
     try {
       const token = localStorage.getItem('token');
-      const res = await axios.delete(`http://localhost:5000/api/rooms/${roomId}`, {
+      const res = await axios.delete(`/api/rooms/${roomId}`, {
         headers: { Authorization: `Bearer ${token}` }
       });
       if (res.data.success) {
@@ -94,7 +94,7 @@ function Admin({ currentUser, onNavigate }) {
 
     try {
       const token = localStorage.getItem('token');
-      const res = await axios.post('http://localhost:5000/api/rooms', {
+      const res = await axios.post('/api/rooms', {
         ...newRoom,
         price: Number(newRoom.price),
         capacity: Number(newRoom.capacity)

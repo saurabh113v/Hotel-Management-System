@@ -12,7 +12,7 @@ function Home({ onNavigate, setRoomsFilter }) {
   useEffect(() => {
     const fetchFeatured = async () => {
       try {
-        const res = await axios.get('http://localhost:5000/api/rooms');
+        const res = await axios.get('/api/rooms');
         if (res.data.success) {
           // Take premium/suite rooms as featured
           setFeaturedRooms(res.data.data.slice(0, 3));
