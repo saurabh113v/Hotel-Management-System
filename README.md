@@ -122,3 +122,23 @@ The application will be accessible at:
 ├── package.json         # Workspace/Root configuration scripts
 └── README.md            # Project documentation
 ```
+
+---
+
+## ⚡ Deployment to Vercel
+
+This full-stack application is configured to deploy directly to Vercel as a single project using the [vercel.json](file:///c:/Users/saura/OneDrive/Desktop/Hotel%20Booking%20App/vercel.json) configuration.
+
+### Steps to Deploy:
+
+1. **Push your code to GitHub** (already done!).
+2. Go to the [Vercel Dashboard](https://vercel.com/dashboard) and click **Add New > Project**.
+3. **Import** your repository `saurabh113v/Hotel-Management-System`.
+4. In the **Configure Project** step:
+   - Keep the default settings (Vercel automatically detects the `vercel.json` and configures the builds).
+5. Open the **Environment Variables** accordion and add the backend variables:
+   - `MONGO_URI`: Your production MongoDB connection string (e.g. MongoDB Atlas).
+   - `JWT_SECRET`: A secure random string for JWT authentication.
+   - `JWT_EXPIRE`: `30d`
+   - `NODE_ENV`: `production`
+6. Click **Deploy**. Vercel will build the Vite frontend static files and compile the Express backend into serverless functions.
