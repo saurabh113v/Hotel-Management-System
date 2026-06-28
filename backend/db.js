@@ -50,11 +50,11 @@ const seedData = async () => {
           price: 4999,
           capacity: 1,
           description: 'Enjoy absolute tranquility inside a luxury cottage overlooking the vast tea gardens of Munnar. Includes fresh organic herbal teas, high-speed Wi-Fi, and open deck.',
-          image: 'https://images.unsplash.com/photo-1611891487122-2075b96244e1?auto=format&fit=crop&w=800&q=80',
+           image: 'https://images.unsplash.com/photo-1520250497591-112f2f40a3f4?auto=format&fit=crop&w=800&q=80',
           images: [
-            'https://images.unsplash.com/photo-1611891487122-2075b96244e1?auto=format&fit=crop&w=800&q=80',
-            'https://images.unsplash.com/photo-1595526114035-0d45ed16cfbf?auto=format&fit=crop&w=800&q=80',
-            'https://images.unsplash.com/photo-1620626011761-996317b6979a?auto=format&fit=crop&w=800&q=80'
+            'https://images.unsplash.com/photo-1520250497591-112f2f40a3f4?auto=format&fit=crop&w=800&q=80',
+            'https://images.unsplash.com/photo-1596394516093-501ba68a0ba6?auto=format&fit=crop&w=800&q=80',
+            'https://images.unsplash.com/photo-1582719478250-c89cae4dc85b?auto=format&fit=crop&w=800&q=80'
           ],
           location: 'Kerala',
           lat: 10.0889,
